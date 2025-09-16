@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Header from '../components/Header';
+import Script from 'next/script'
+import Header from '../components/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,11 +13,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        <head>
-        {/* Tailwind CDN Script */}
-        <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-      </head>
+      <head />
       <body className={inter.className}>
+        {/* ✅ Correct way to load external scripts in Next.js */}
+        <Script
+          src="https://cdn.tailwindcss.com/3.4.16"
+          strategy="beforeInteractive"
+        />
         <Header />
         {children}
       </body>
