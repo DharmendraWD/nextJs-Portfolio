@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { slideUp } from './animation';
 import { motion } from 'framer-motion';
+import d1 from '../../../public/images/d1C.JPG'
 
 export default function Home() {
 
@@ -46,7 +47,9 @@ export default function Home() {
   return (
     <motion.main variants={slideUp} initial="initial" animate="enter" className={styles.landing}>
       <Image 
-        src="/images/d1C.JPG"
+        src={d1}
+        width={300}
+        height={300}
         fill={true}
         alt="background"
       />
